@@ -1,0 +1,60 @@
+{
+  "name": "pi-agent-channel",
+  "version": "2026.7.10",
+  "description": "Inter-agent communication channels and detached relay for Pi",
+  "type": "module",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Caseneuve",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "agents",
+    "extensions",
+    "agent-channel",
+    "relay"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/agent-channel/index.ts"
+    ],
+    "skills": [
+      "./skills/agent-comms"
+    ]
+  },
+  "bin": {
+    "pi-agent-channel-relay": "./bin/pi-agent-channel-relay.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "check": "tsc --noEmit",
+    "install-relay-cli": "bun scripts/relay-cli-installer.ts install",
+    "uninstall-relay-cli": "bun scripts/relay-cli-installer.ts uninstall",
+    "format": "prettier --write --parser typescript --use-tabs false 'bin/**/*.ts' 'extensions/**/*.ts' 'relay/**/*.ts' 'scripts/**/*.ts'",
+    "format:check": "prettier --check --parser typescript --use-tabs false 'bin/**/*.ts' 'extensions/**/*.ts' 'relay/**/*.ts' 'scripts/**/*.ts'"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.74.0",
+    "@earendil-works/pi-agent-core": "^0.74.0",
+    "@earendil-works/pi-coding-agent": "^0.74.0",
+    "@earendil-works/pi-tui": "^0.74.0",
+    "@sinclair/typebox": "^0.34.40",
+    "@types/bun": "^1.3.9",
+    "prettier": "^3.8.2",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseneuve/pi-agent-channel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caseneuve/pi-agent-channel/issues"
+  },
+  "homepage": "https://github.com/caseneuve/pi-agent-channel#readme"
+}
