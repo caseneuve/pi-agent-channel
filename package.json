@@ -1,6 +1,6 @@
 {
   "name": "pi-agent-channel",
-  "version": "2026.7.10",
+  "version": "2026.7.24",
   "description": "Inter-agent communication channels and detached relay for Pi",
   "type": "module",
   "license": "MIT",

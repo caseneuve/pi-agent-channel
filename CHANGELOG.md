@@ -1,5 +1,11 @@
 # Changelog
 
+## [2026.7.24] - 2026-07-24
+
+### Fixed
+
+- Register the bundled `agent-comms` skill through the standard Pi manifest discovery (`pi.skills: ["./skills"]`) and remove the hand-rolled `resources_discover` hook that pointed at a nonexistent `extensions/agent-channel/skills` path, resolving the skill-conflict error.
+
 ## [2026.7.10] - 2026-07-10
 
 ### Added
