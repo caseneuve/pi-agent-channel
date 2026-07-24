@@ -5,7 +5,6 @@ import type {
 import { Type } from "@sinclair/typebox";
 import * as fs from "node:fs";
 import * as net from "node:net";
-import * as path from "node:path";
 import {
   shouldTriggerTurn,
   isValidMessage,
@@ -91,15 +90,6 @@ export default function (pi: ExtensionAPI) {
   let transport: MessageTransport = new FileTransport(DEFAULT_CHANNEL_DIR);
   const display = createDisplay();
   let ctx: ExtensionContext | undefined;
-
-  // ── register bundled skills ──
-  pi.on("resources_discover", async () => {
-    return {
-      skillPaths: [
-        path.join(path.dirname(new URL(import.meta.url).pathname), "skills"),
-      ],
-    };
-  });
 
   // ── Block channel tools when comms are muted ──
   pi.on("tool_call", async (event) => {

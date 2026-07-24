@@ -18,7 +18,7 @@
       "./extensions/agent-channel/index.ts"
     ],
     "skills": [
-      "./skills/agent-comms"
+      "./skills"
     ]
   },
   "bin": {
